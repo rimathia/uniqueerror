@@ -9,12 +9,15 @@ project(uniqueerror
         DESCRIPTION "example for ensuring global uniqueness of error numbers"
         LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(registry)
+add_subdirectory(checked_addition)
 add_subdirectory(checked_division)
 add_subdirectory(fmt)
 
 add_executable(main main.cpp)
-target_link_libraries(main registry checked_division)
+target_link_libraries(main registry checked_division checked_addition)
+
+add_executable(ctors ctors.cpp)

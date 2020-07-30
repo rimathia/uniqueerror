@@ -1,13 +1,14 @@
 #include <registry/registry.h>
 #include <checked_division/checked_division.h>
+#include <checked_addition/checked_addition.h>
 
-const auto x = register_error(42);
+#include <iostream>
+#include <limits>
 
 int main(int argc, char **argv)
 {
-    if (argc != 1)
-    {
-        throw_error(42);
-    }
-    divide(1.0, 0.0);
+    std::cerr << "main\n";
+    CHECK(argc == 1, 42);
+    divide(1, 0);
+    add(std::numeric_limits<std::int32_t>::max(), std::numeric_limits<std::int32_t>::max());
 }

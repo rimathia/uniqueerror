@@ -1,6 +1,6 @@
 #ifndef CHECKED_DIVISION_H
 #define CHECKED_DIVISION_H
 
-double divide(double x, double y);
+int divide(int x, int y);
 
 #endif

@@ -2,13 +2,8 @@
 
 #include <registry/registry.h>
 
-static auto r = register_error(21);
-
-double divide(double x, double y)
+int divide(int x, int y)
 {
-    if (y == 0.0)
-    {
-        throw_error(21);
-    }
+    CHECK(y != 0, 21);
     return x / y;
 }

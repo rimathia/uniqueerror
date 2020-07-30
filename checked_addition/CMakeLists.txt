@@ -1,0 +1,3 @@
+add_library(checked_addition STATIC include/checked_addition/checked_addition.h checked_addition.cpp)
+target_include_directories(checked_addition PUBLIC include)
+target_link_libraries(checked_addition registry)

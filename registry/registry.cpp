@@ -17,13 +17,13 @@ int register_error(int error_number)
     auto &registry = get_registered_errors();
     if (registry.find(error_number) != registry.end())
     {
-        const auto message = "error " + std::to_string(error_number) + " already registered";
+        const auto message = "error " + std::to_string(error_number) + " already registered\n";
         fmt::print(stderr, message);
         throw std::logic_error(message);
     }
     registry.insert(error_number);
     std::time_t t = std::time(nullptr);
-    fmt::print(stderr, "registered error number {} at {:%Y-%m-%d:%H-%M-%S}\n", error_number, fmt::localtime(t));
+    fmt::print(stderr, "registered error number {} at {:%Y-%m-%dT%H-%M-%S}Z\n", error_number, fmt::gmtime(t));
     return error_number;
 }
 
