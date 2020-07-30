@@ -1,0 +1,3 @@
+add_library(checked_division SHARED include/checked_division/checked_division.h checked_division.cpp)
+target_include_directories(checked_division PUBLIC include)
+target_link_libraries(checked_division registry)
